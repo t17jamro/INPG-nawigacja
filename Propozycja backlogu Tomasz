@@ -1,0 +1,30 @@
+Cele najbliższe:
+Stworzenie Działającego programu na testowej mapie, z priorytem na działanie algorytmów, i wygodą modyfikacji istniejącej bazy punktów 
+
+Stworzenie próbnej bazy danych:
+-Wybranie i wyznaczenie punktów przeznaczonych dla nawigacji na mapie 2D (w tym wykorzystany wybrany obszar)
+punkty oznaczałyby lokację i zawierałby: 
+pozycje, identyfikacje, sąsiednie punkty oraz nazwę
+
+Proponuje obszar niewielki (np kampus AGH) w celu uniknięcia nadmiaru pracy z wyznaczaniem materiału do testów
+
+-stworzenie funkcjonalności w której baza punktów jest zapisywana osobno
+-baza "połączeń między punktami"
+Legenda/oprawa graficzna:
+-Stworznie grafiki kursora
+-Wyświetlanie mapy wraz z punktami wyznaczonej trasy po wyszukiwaniu
+Menu:
+-Możliwość wyszukiwania trasy od punktu A do B za pomocą nazwy
+Funkcje:
+-tworzenie punktów 
+-podzielenie połączeń punktów na dwie kategorie - standardową i niestandardową. Połączenia standardowe będą liczyć odległość przez wzór na prostą 
+podczas gdy niestandardowe będą wpisyały odległość odręcznie. Niezdefiniowane połączenie zostanie potraktowane jako standardowe
+-algorytm wyszukania drogi między dwoma dowolnymi punktami i obliczeniem łącznej trasy
+-algorytmy do szukania błędów w bazie (np. Punkt bez połączeń, niezdefiniowane połączenie)
+
+Cele dalsze (cel za "kilka miesięcy"):
+-Stworzenie funkcjonalności dla większych obszarów - stworzenie algorytmów które nie będą wykorzystywać niepotrzebnych punktów,
+w celu optymali programu (np skala mapy na kraju nie musi badać wszystkich punktów pomiędzy miastami)
+-Stworzenie programu który potrafi automatycznie interpretować dane graficzne (mapy, zdjęcia satelitarne) w celu stworzenia baz danych
+-Problemy techniczne np
+serwery, zdjęcia satelitarne lub mapy
