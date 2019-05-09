@@ -1,0 +1,17 @@
+Algorytm szukania trasy (tam coś na grafach chyba trzeba xD)
+Moglibyśmy zacząć od zrobienia jakiejś mini-nawigacji która na potrzeby przetestowania algorytmu znajdywała by drogę na terenie AGH 
+pomiedzy jakimiś głównymi punktami orientacyjnymi
+Napewno beda potrzebne jakieś grafiki (ikony naszej obecnej lokalizacji, celu, tło, drogi itd)
+
+Propozycje do backlogu:
+1. Logo naszej nawigacji
+2. Nazwa
+3. Spis jakiś ulic i puntów na agh do tej mini-nawigacji
+4. Graficzna mapa na planie grafów
+6. Algorytm szukania najszybszej trasy miedzy punktami
+5. Ikona lokalizacji obecnej
+6. Ikona lokalizacji docelowej
+7. Repetetywna grafika drogi
+
+Moglibyśmy powiedzieć że w trakcie tych 2 miesięcy (o ile dobrze pamiętam) zrobimy jakąs mini wersję testową która w konsoli bedzie nas
+pytać o cel i nasza lokalizacje i bedzie zwyczajnie wypisywać drogi po których musimy przejść żeby sie tam znaleźć
