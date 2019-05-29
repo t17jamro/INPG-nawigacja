@@ -1,0 +1,64 @@
+//plik hpp
+class PointList {
+public:
+    PointList(Point construct_map): PointList_(1,construct_map) {};
+    void Import_Map();
+
+    std::size_t find(int x) const;
+
+    const Point& operator[](std::size_t pos) const { return PointList_[pos]; }
+
+    Point& operator[](std::size_t pos) { return PointList_[pos]; }
+
+    std::vector<Point>::const_iterator cbegin() const { return PointList_.cbegin(); }
+
+    std::vector<Point>::const_iterator cend() const { return PointList_.cend(); }
+
+    std::vector<Point>::iterator begin() { return PointList_.begin(); }
+
+    std::vector<Point>::const_iterator begin() const { return PointList_.cbegin(); }
+
+    std::vector<Point>::iterator end() { return PointList_.end(); }
+
+    std::vector<Point>::const_iterator end() const { return PointList_.cend(); }
+
+private:
+    std::vector<Point> PointList_;
+};
+// plik cpp
+void PointList::Import_Map() {
+    std::ostringstream oss;
+    std::string linia;
+    std::fstream plik;
+    plik.open( "C:\\Users\\To_Ja\\Desktop\\Inform\\mdig-agh-air_inf1_lab_cpp_exercises-8565224dab68\\solutions\\INPG_Nawigacja\\BazaDanych.txt", std::ios::in);
+    if( plik.good())
+    {
+        while(!plik.eof())
+        {
+            getline(plik, linia);
+            auto a = Point(linia);
+            PointList_.push_back(a); //wyświetlenie linii
+        }
+        plik.close();
+    } else std::cout << "Dostep do pliku zostal zabroniony!" << std::endl;
+}
+
+std::size_t PointList::find(int x) const {
+    for (std::size_t posit =0 ; posit<PointList_.size(); posit++)
+    {
+        if (PointList_[posit].getid() == x) return posit;
+    }
+    return 10;
+}
+
+//Gtesty
+
+TEST(PointCreateTest, FindMapFunction) {
+    Point x(4,34,54,"Nazwa",std::vector<int>{55,6,8});
+    PointList test(x);
+    std::size_t xpos = test.find(4);
+    int t = xpos;
+    EXPECT_EQ(test[t].getlist().size(),3U);
+    EXPECT_EQ(test[t].getid(),4);
+    EXPECT_EQ(test[t].gety(),x.gety());
+}
