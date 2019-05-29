@@ -1,0 +1,11 @@
+C:\Users\thede\Documents\NaviGraph\NaviTest1\NaviTest1\bin\Debug\NaviTest1.exe.config
+C:\Users\thede\Documents\NaviGraph\NaviTest1\NaviTest1\bin\Debug\NaviTest1.exe
+C:\Users\thede\Documents\NaviGraph\NaviTest1\NaviTest1\bin\Debug\NaviTest1.pdb
+C:\Users\thede\Documents\NaviGraph\NaviTest1\NaviTest1\obj\Debug\NaviTest1.Form1.resources
+C:\Users\thede\Documents\NaviGraph\NaviTest1\NaviTest1\obj\Debug\NaviTest1.Properties.Resources.resources
+C:\Users\thede\Documents\NaviGraph\NaviTest1\NaviTest1\obj\Debug\NaviTest1.csproj.GenerateResource.cache
+C:\Users\thede\Documents\NaviGraph\NaviTest1\NaviTest1\obj\Debug\NaviTest1.csproj.CoreCompileInputs.cache
+C:\Users\thede\Documents\NaviGraph\NaviTest1\NaviTest1\obj\Debug\NaviTest1.exe
+C:\Users\thede\Documents\NaviGraph\NaviTest1\NaviTest1\obj\Debug\NaviTest1.pdb
+C:\Users\thede\Documents\NaviGraph\NaviTest1\NaviTest1\obj\Debug\NaviTest1.csprojAssemblyReference.cache
+C:\Users\thede\Documents\NaviGraph\NaviTest1\NaviTest1\obj\Debug\NaviTest1.Form2.resources
