@@ -1,0 +1,71 @@
+UWAGA! Przed użyciem funkcji związanymi z bazą danych należy w kodzie programu 
+(w funkji Import_Map w pliku źródłowym) zmienić docelowy adres lokaalizacji notatnika będącego baża danych
+
+Do Aktualizacji
+Priorytet:
+- Stworzenie Obiektu Krzywej
+- Stworzenie wyjątków lub lepszej metody zgłaszania "braku Punktu"
+- Stworzenie algorytmu szukania drogi
+- Stworzenie funkcji obliczającej odległość między dwoma punktami
+
+Inne zadania:
+- Utworzenie Funkcji sprawdzających poprawność bazy danych
+1)Czy plik tekstowy bazy danych w każdej linijce posiada id,
+ obie współrzędne i conajmniej jednego sąsiada
+2)Czy Id się powtarza
+
+Odległe zadania:
+-Co zrobić gdy dwa punkty przyjmą tą samą nazwe?
+-Jak zaimplementować mapy na większą skale? 
+
+Plik nagłówkowy:
+
+
+1)Klasa punkt:
+Składowe klasy:
+-id(unikalny numer identyfikujący punkt)
+-x (współrzędne punktu)
+-y (współrzędne punktu)
+-nazwa   ( Po niej użytkownik szuka punktu)
+-lista id punktów sąsiadujących
+
+Konstruktory:
+-domyślny kopiujący
+-Podanie każdej składowej z osobna
+-Poprzez jeden ciąg znaków (wykorzystywane do odczytywania bazy danych)
+
+Metody:
+- "Get"
+-getid()
+-getx()
+-gety()
+-getname()
+-getlist()
+otrzymanie dostępu do składowych klasy
+
+
+2)Klasa Listy punktów
+Składowa Klasy:
+-Wektor z obiektami klasy Punkt
+
+Konstruktor:
+Tworzy wektor z jedenym podanym punktem w celu możliwości uworzenia obiektu.
+Punkt ten powiniem być usuwany po utworzeniu bazy danych
+
+Metody:
+Import_Map - zamienia Punkty zapisane w pliku tekstowym w obiekty wykorzystywane przez program
+find() - zainmplemetowana metoda do odszukiwania punktów poprzez ich unikalne id.
+Funkcja zwraca pozycje punktu w wektorze będącym wartością składową klasy.
+W przypadku braku znalezienia funkcji zwraca 0
+
+Plik źródłowy:
+Komentarz - to tutaj uaktalnia się ścieżkę do bazy danych
+
+
+Testy Jednotkowe:
+1) Normalny konstruktor punktu po podaniu potrzebnych danych
+2) Kostrukto Tworzący cały obiekt Punkt za pomącą jedynie zmiennejstd::string
+3) Test funkcji Import_Map - proszę zwrócić uwage że wykonanie 
+tego testu zależy w większości od poprawności samej bazy danych
+Bez funkcji automatycznie wykonujących tą czynność za nas korzystanie z tego  testu może być żmudne
+4) Funkcja szukająca punktów poprzez id w środku obiektu klasy PointList
