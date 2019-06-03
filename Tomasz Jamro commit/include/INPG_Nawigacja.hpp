@@ -3,7 +3,8 @@
 
 #include <vector>
 #include <string>
-// jeszcze nie potrzebne #include <functional>
+#include <cstdlib>
+#include <functional>
 
 class Point {
 public:
@@ -35,7 +36,11 @@ private:
 class PointList {
 public:
     PointList(Point construct_map): PointList_(1,construct_map) {};
+
     void Import_Map();
+
+    std::size_t find(int x) const;
+
     const Point& operator[](std::size_t pos) const { return PointList_[pos]; }
 
     Point& operator[](std::size_t pos) { return PointList_[pos]; }
@@ -55,5 +60,6 @@ public:
 private:
     std::vector<Point> PointList_;
 };
+
 
 #endif /* MATLAB_HPP_ */
