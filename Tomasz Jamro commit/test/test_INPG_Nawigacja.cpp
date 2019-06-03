@@ -51,3 +51,13 @@ TEST(PointCreateTest, ImportMap) {
     EXPECT_EQ(testpoint3.getname(),"Nazwa2");
 
 }
+
+TEST(PointCreateTest, FindPointMapFunction) {
+    Point x(4,34,54,"Nazwa",std::vector<int>{55,6,8});
+    PointList test(x);
+    std::size_t xpos = test.find(4);
+    int t = xpos;
+    EXPECT_EQ(test[t].getlist().size(),3U);
+    EXPECT_EQ(test[t].getid(),4);
+    EXPECT_EQ(test[t].gety(),x.gety());
+}
