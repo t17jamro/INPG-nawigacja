@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-
+#include <math.h>
 #include "INPG_Nawigacja.hpp"
 
 
@@ -60,4 +60,10 @@ TEST(PointCreateTest, FindPointMapFunction) {
     EXPECT_EQ(test[t].getlist().size(),3U);
     EXPECT_EQ(test[t].getid(),4);
     EXPECT_EQ(test[t].gety(),x.gety());
+}
+
+TEST(PointCreateTest, DistanceFunction){
+    Point x(4,0,0,"Nazwa",std::vector<int>{55,6,8});
+    Point t(4,3,4,"Nazwa",std::vector<int>{55,6,8});
+    EXPECT_EQ(distance(x,t),sqrt(25));
 }
