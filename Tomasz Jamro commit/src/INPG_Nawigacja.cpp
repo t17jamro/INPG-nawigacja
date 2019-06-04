@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <math.h>
 #include <sstream>
 
 
@@ -72,7 +73,20 @@ std::size_t PointList::find(int x) const {
     return 0; // Do zmiany - dodadanie wyjÄ…tku gdy nie znajdzie siÄ™ punktu WAĹ»NE
 }
 
-int find_lack_of_id() {
+float distance(Point A, Point B) {
+    float a = sqrt((A.getx()-B.getx())*(A.getx()-B.getx())+(A.gety()-B.gety())*(A.gety()-B.gety()));
+    return a;
+}
+
+std::size_t PointRoad::find(int x) const {
+    for (std::size_t posit =0 ; posit<Road_.size(); posit++)
+    {
+        if (Road_[posit].getid() == x) return posit;
+    }
+    return 0; // Do zmiany - dodadanie wyjątku gdy nie znajdzie się punktu WAŻNE
+}
+
+/*int find_lack_of_id() {
     std::string linia;
     std::fstream plik;
     int number = 0;
@@ -91,5 +105,5 @@ int find_lack_of_id() {
         }
         plik.close();
     } else std::cout << "Dostep do pliku zostal zabroniony!" << std::endl;
-    return 0; // Do zmiany - dodadanie wyjÄ…tku gdy baza jest poprawna
-}
+   return 0; // Do zmiany - dodadanie wyjÄ…tku gdy baza jest poprawna
+}*/
