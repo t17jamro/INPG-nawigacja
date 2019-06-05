@@ -1,0 +1,13 @@
+﻿  FirstF.cpp
+C:\Users\thede\Documents\Navigation\Navigrap\Navigrap\Map.h(202,1): warning C4947:  "System::Windows::Forms::Control::Scale": oznaczono jako przestarzały
+C:\Users\thede\Documents\Navigation\Navigrap\Navigrap\Map.h(202,1): message :  Komunikat: "This method has been deprecated. Use the Scale(SizeF ratio) method instead. http://go.microsoft.com/fwlink/?linkid=14202"
+C:\Users\thede\Documents\Navigation\Navigrap\Navigrap\Map.h(205,1): warning C4947:  "System::Windows::Forms::Control::Scale": oznaczono jako przestarzały
+  Map.cpp
+C:\Users\thede\Documents\Navigation\Navigrap\Navigrap\Map.h(205,1): message :  Komunikat: "This method has been deprecated. Use the Scale(SizeF ratio) method instead. http://go.microsoft.com/fwlink/?linkid=14202"
+C:\Users\thede\Documents\Navigation\Navigrap\Navigrap\Map.h(202,1): warning C4947:  "System::Windows::Forms::Control::Scale": oznaczono jako przestarzały
+C:\Users\thede\Documents\Navigation\Navigrap\Navigrap\Map.h(202,1): message :  Komunikat: "This method has been deprecated. Use the Scale(SizeF ratio) method instead. http://go.microsoft.com/fwlink/?linkid=14202"
+C:\Users\thede\Documents\Navigation\Navigrap\Navigrap\Map.h(205,1): warning C4947:  "System::Windows::Forms::Control::Scale": oznaczono jako przestarzały
+  Generowanie kodu...
+C:\Users\thede\Documents\Navigation\Navigrap\Navigrap\Map.h(205,1): message :  Komunikat: "This method has been deprecated. Use the Scale(SizeF ratio) method instead. http://go.microsoft.com/fwlink/?linkid=14202"
+  FirstF.obj : napotkano moduł MSIL; konsolidowanie przyrostowe jest wyłączone dla modułów MSIL; zostanie wykonana pełna konsolidacja
+  Navigrap.vcxproj -> C:\Users\thede\Documents\Navigation\Navigrap\Debug\Navigrap.exe
