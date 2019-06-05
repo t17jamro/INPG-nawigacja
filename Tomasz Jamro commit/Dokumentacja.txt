@@ -3,20 +3,21 @@ UWAGA! Przed użyciem funkcji związanymi z bazą danych należy w kodzie progra
 
 Do Aktualizacji
 Priorytet:
-- Stworzenie Obiektu Krzywej
 - Stworzenie wyjątków lub lepszej metody zgłaszania "braku Punktu"
-- Stworzenie algorytmu szukania drogi
-- Stworzenie funkcji obliczającej odległość między dwoma punktami
+- Ulepszenie algorytmu szukania drogi
+- Możliwość wczytywania bazy danych bez zmiany ręcznej ścieżki pliku
 
 Inne zadania:
 - Utworzenie Funkcji sprawdzających poprawność bazy danych
 1)Czy plik tekstowy bazy danych w każdej linijce posiada id,
  obie współrzędne i conajmniej jednego sąsiada
 2)Czy Id się powtarza
+- Utworzenie wyjątków dla braku znalezienia punktu poprzez jego id
 
 Odległe zadania:
--Co zrobić gdy dwa punkty przyjmą tą samą nazwe?
--Jak zaimplementować mapy na większą skale? 
+-Co zrobić gdy dwa punkty przyjmą tą samą nazwe
+-Jak zaimplementować mapy na większą skale
+-Wiele nazw dla jednego punktu
 
 Plik nagłówkowy:
 
@@ -50,7 +51,7 @@ Składowa Klasy:
 
 Konstruktor:
 Tworzy wektor z jedenym podanym punktem w celu możliwości uworzenia obiektu.
-Punkt ten powiniem być usuwany po utworzeniu bazy danych
+Punkt ten powiniem być usuwany po utworzeniu bazy danych poprzez importowanie poprawnej bazy danych
 
 Metody:
 Import_Map - zamienia Punkty zapisane w pliku tekstowym w obiekty wykorzystywane przez program
@@ -58,7 +59,26 @@ find() - zainmplemetowana metoda do odszukiwania punktów poprzez ich unikalne i
 Funkcja zwraca pozycje punktu w wektorze będącym wartością składową klasy.
 W przypadku braku znalezienia funkcji zwraca 0
 
+3)Klasa Drogi
+Składowa Klasy:
+-Wektor z obiektami klasy Punkt
+
+Konstruktor:
+Tworzy wektor punktów poprzez kopiowanie podanego wektora punktów
+
+Metody:
+distance_calculate()- oblicza długość całej drogi
+find() - zainmplemetowana metoda do odszukiwania punktów poprzez ich unikalne id.
+Funkcja zwraca pozycje punktu w wektorze będącym wartością składową klasy.
+W przypadku braku znalezienia funkcji zwraca 0
+ 
+ 4) Luźne metody
+ - Obliczanie długości między dwoma punktami
+ - Znalezienie wektora o składowych typu Punkt Na podstawie początkowego punktu, końcowego punktu i bazy danych w których się znajdują
+
 Plik źródłowy:
+
+!!!!! WAŻNE !!!!!
 Komentarz - to tutaj uaktalnia się ścieżkę do bazy danych
 
 
@@ -69,3 +89,6 @@ Testy Jednotkowe:
 tego testu zależy w większości od poprawności samej bazy danych
 Bez funkcji automatycznie wykonujących tą czynność za nas korzystanie z tego  testu może być żmudne
 4) Funkcja szukająca punktów poprzez id w środku obiektu klasy PointList
+5) Obliczanie odległości pomiędzy dwoma punktami - luźna funkcja
+6) Tworzenie obiektu drogi i obliczanie jego odległości
+7) Funkcja znalezienia drogi i obliczenia jej długości
