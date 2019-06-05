@@ -1,5 +1,5 @@
-#ifndef MATLAB_HPP_
-#define MATLAB_HPP_
+#ifndef NAWIGACJA_HPP_
+#define NAWIGACJA_HPP_
 
 #include <vector>
 #include <string>
@@ -65,7 +65,7 @@ float distance(Point A, Point B);
 
 class PointRoad {
 public:
-    PointRoad(std::vector<Point> construct_road): Road_(construct_road) {};
+    PointRoad(std::vector<Point> &construct_road): Road_(construct_road) {};
 
     std::size_t find(int x) const;
 
@@ -85,10 +85,13 @@ public:
 
     std::vector<Point>::const_iterator end() const { return Road_.cend(); }
 
-    // float distance_calculate() const; do zrobienia
+    float distance_calculate() const;
 
 private:
     std::vector<Point> Road_;
 };
 
-#endif /* MATLAB_HPP_ */
+std::vector<Point> FindRoad(int A,int B, PointList Map);
+
+
+#endif /* NAWIGACJA_HPP_ */
