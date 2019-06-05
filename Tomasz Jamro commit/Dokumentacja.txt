@@ -79,10 +79,13 @@ W przypadku braku znalezienia funkcji zwraca 0
 Plik źródłowy:
 
 !!!!! WAŻNE !!!!!
-Komentarz - to tutaj uaktalnia się ścieżkę do bazy danych
+to tutaj uaktalnia się ścieżkę do bazy danych
 
 
 Testy Jednotkowe:
+!!!!! WAŻNE !!!!!
+testy odbywają się na testowej bazie danych BazaTest.txt
+
 1) Normalny konstruktor punktu po podaniu potrzebnych danych
 2) Kostrukto Tworzący cały obiekt Punkt za pomącą jedynie zmiennejstd::string
 3) Test funkcji Import_Map - proszę zwrócić uwage że wykonanie 
