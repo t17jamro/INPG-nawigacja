@@ -2,11 +2,12 @@
 
 #include <iostream>
 #include <fstream>
-#include <math.h>
 #include <sstream>
+#include <math.h>
+#include <algorithm>
 
 
- Point::Point(std::string str) {
+Point::Point(std::string str) {
     std::ostringstream oss;
     std::vector<std::string> pointstring;
     for (auto it = str.begin(); it != str.end() ; ++it) {
@@ -18,7 +19,7 @@
             oss.clear();
         }
     }
-    // WaĹĽne !!! - przydatny warunek do odczytywania listy sasiednich punktĂłw to !isspace(*it) - wykrywa brak spacji
+    // Ważne !!! - przydatny warunek do odczytywania listy sasiednich punktów to !isspace(*it) - wykrywa brak spacji
     int id = std::stoi( pointstring[0] );
     int x = std::stoi( pointstring[1] );
     int y = std::stoi( pointstring[2] );
@@ -52,14 +53,14 @@ void PointList::Import_Map() {
     PointList_ = {};
     std::string linia;
     std::fstream plik;
-    plik.open( "C:\\Users\\To_Ja\\Desktop\\Inform\\mdig-agh-air_inf1_lab_cpp_exercises-8565224dab68\\solutions\\INPG_Nawigacja\\BazaDanych.txt", std::ios::in);
+    plik.open( "C:\\Users\\To_Ja\\Desktop\\Inform\\mdig-agh-air_inf1_lab_cpp_exercises-8565224dab68\\solutions\\INPG_Nawigacja\\BazaTest.txt", std::ios::in);
     if( plik.good())
     {
         while(!plik.eof())
         {
             getline(plik, linia);
             auto a = Point(linia);
-            PointList_.push_back(a); //tworzenie punktu za pomocÄ… lini
+            PointList_.push_back(a); //tworzenie punktu za pomocą lini
         }
         plik.close();
     } else std::cout << "Dostep do pliku zostal zabroniony!" << std::endl;
@@ -70,7 +71,7 @@ std::size_t PointList::find(int x) const {
     {
         if (PointList_[posit].getid() == x) return posit;
     }
-    return 0; // Do zmiany - dodadanie wyjÄ…tku gdy nie znajdzie siÄ™ punktu WAĹ»NE
+    return 0; // Do zmiany - dodadanie wyjątku gdy nie znajdzie się punktu WAŻNE
 }
 
 float distance(Point A, Point B) {
@@ -86,7 +87,59 @@ std::size_t PointRoad::find(int x) const {
     return 0; // Do zmiany - dodadanie wyjątku gdy nie znajdzie się punktu WAŻNE
 }
 
-/*int find_lack_of_id() {
+float PointRoad::distance_calculate() const{
+    int siz = Road_.size();
+    float a = 0;
+    for (int it = 0; it < siz - 1; it++){
+        a += distance(Road_[it],Road_[it+1]);
+    }
+    return a;
+}
+
+std::vector<Point> FindRoad(int A,int B, PointList Map){
+    int a = Map.find(A); // Wszystkie komentarze w postaci "// std::cout" służą do ułatwienia testowania i modyfikacji funkcji
+    int b = Map.find(B);
+    Point P = Map[a];
+    Point G = Map[b];
+    std::vector<Point> Road;
+    int last;
+    std::vector<std::vector<float>> distances;
+    Road.push_back(P);
+    std::vector<float> distancevec;
+    do{
+        last = Road.size() - 1;
+        for(unsigned long long i = 0; i < Road[last].getlist().size(); i++){
+            distancevec.push_back(distance(G,Map[Map.find(Road[last].getlist()[i])]));
+            //std::cout<<"\n odleglosc: " <<distancevec[i];
+        }
+        //powyższy fragment tworzy za każdym razem dla ostatniego punktu vector distancevec - okrela on odległość sąsiadów od punktu docelowego
+        int n = distancevec.size();
+        //std::cout<<"\n id wielkosc wektora distancevec" << n;
+        int mic = distancevec[0];
+        int posit = 0;
+        for(int i = 0; i != n; ++i)
+        {
+            if(distancevec[i] < mic) {
+                mic = distancevec[i];
+                posit = i;
+            }
+        }
+        // powyższy fragment znajduje pozycje w wektorze distance o najmniejszej wartości
+        //std::cout<<"\n id nowego elementu " << Road[last].getlist()[posit];
+        //std::cout <<"\n dodaje punkt: " << Map[Map.find(Road[last].getlist()[posit])].getid();
+        distances.push_back(distancevec);
+        distancevec.clear();
+        Road.push_back(Map[Map.find(Road[last].getlist()[posit])]);
+        last += 1;
+        // powyższy fragment dodaje do tworzącej się drogi punkt najbliższy punktu końcowemu
+        //std::cout<< "\n Nowa pętla \n\n";
+    }
+    while(distance(Road[last],G)!=0); // sprawdzenie czy punkt jest punktem ostatnim
+    return Road;
+}
+/* Błędny algorytm, zalążek dalszej pracy
+
+ int find_lack_of_id() {
     std::string linia;
     std::fstream plik;
     int number = 0;
@@ -105,5 +158,6 @@ std::size_t PointRoad::find(int x) const {
         }
         plik.close();
     } else std::cout << "Dostep do pliku zostal zabroniony!" << std::endl;
-   return 0; // Do zmiany - dodadanie wyjÄ…tku gdy baza jest poprawna
-}*/
+    return 0; // Do zmiany - dodadanie wyjątku gdy baza jest poprawna
+}
+*/
