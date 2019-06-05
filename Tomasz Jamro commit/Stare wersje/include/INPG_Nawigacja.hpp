@@ -3,8 +3,7 @@
 
 #include <vector>
 #include <string>
-#include <cstdlib>
-#include <functional>
+// jeszcze nie potrzebne #include <functional>
 
 class Point {
 public:
@@ -36,11 +35,7 @@ private:
 class PointList {
 public:
     PointList(Point construct_map): PointList_(1,construct_map) {};
-
     void Import_Map();
-
-    std::size_t find(int x) const;
-
     const Point& operator[](std::size_t pos) const { return PointList_[pos]; }
 
     Point& operator[](std::size_t pos) { return PointList_[pos]; }
@@ -59,36 +54,6 @@ public:
 
 private:
     std::vector<Point> PointList_;
-};
-
-float distance(Point A, Point B);
-
-class PointRoad {
-public:
-    PointRoad(std::vector<Point> construct_road): Road_(construct_road) {};
-
-    std::size_t find(int x) const;
-
-    const Point& operator[](std::size_t pos) const { return Road_[pos]; }
-
-    Point& operator[](std::size_t pos) { return Road_[pos]; }
-
-    std::vector<Point>::const_iterator cbegin() const { return Road_.cbegin(); }
-
-    std::vector<Point>::const_iterator cend() const { return Road_.cend(); }
-
-    std::vector<Point>::iterator begin() { return Road_.begin(); }
-
-    std::vector<Point>::const_iterator begin() const { return Road_.cbegin(); }
-
-    std::vector<Point>::iterator end() { return Road_.end(); }
-
-    std::vector<Point>::const_iterator end() const { return Road_.cend(); }
-
-    // float distance_calculate() const; do zrobienia
-
-private:
-    std::vector<Point> Road_;
 };
 
 #endif /* MATLAB_HPP_ */
